@@ -12,7 +12,7 @@ var today = moment().format('L');
 // WEATHER FORECAST
     // CURRENT WEATHER: city name, date, icon of weather conditions, temperature, humidity, wind speed, UV index 
         function currentWeather (city) {
-            var queryURL = 'https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}';
+            var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}";
 
             $.ajax ({
                 url: queryURL,
@@ -22,10 +22,19 @@ var today = moment().format('L');
                 console.log(cityResponse);
 
                 $("#currentWeather").css("display", "block");
-                $("cityDetails").empty();
+                $("cityDetail").empty();
 
                 var iconCode = cityResponse.weather[0].icon;
-                var iconURL = 'https://openweathermap.org/img/w/${iconCode}.png';
+                var iconURL = "https://openweathermap.org/img/w/${iconCode}.png";
+
+                var currentCity = $(
+                    `<h2 id="currentCity"> ${cityResponse.name} ${today} <img src="${iconURL}" alt="${cityResponse.weather[0].description}" /></h2>
+                     <p>Temperature: ${cityResponse.main.temp} °F</p>
+                     <p>Humidity: ${cityResponse.main.humidity}\%</p>
+                     <p>Wind Speed: ${cityResponse.wind.speed} MPH</p>
+                    `);
+
+                    $("#cityDetail").append(currentCity);
             })
         }
     
