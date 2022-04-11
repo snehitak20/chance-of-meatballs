@@ -18,48 +18,69 @@
     </head>
 
     <body>
-        <!-- Header Bar/Navbar -->
-        <nav class="navbar navbar-light bg-dark text-light text-center">
-            <span class="navbar-brand mb-0 w-100 h1 text-white">Weather Dashboard</span>
-        </nav>
-
-        <!-- Main container that will hold all the other containers -->
+         <!-- Main container that will hold all the other containers -->
         <div class="container-fluid">
+            <div class="row navbar navbar-dark bg-dark text-light">
+                <div class="col-12 text-center">
+                    <h1>Weather Dashboard</h1>
+                </div>
+            </div>
+
             <div class="row">
-                
-                <!-- Form column with search-->
-                <div class="col-md-3 bg-light text-dark pb-2 pt-3">
-                    <p class="search-instructions my-1">Search for a city:</p>
-            
-                    <!-- Form Input -->
-                    <form id-="city-history">
-                        <div class="input-group">
-                            <input id="city-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name">
-                            <div class="input-group-append">
-                                <button class="bt btn-primary mb-3" type="submit" id="search-button">
+                <div class="col-3 bg-light pb-2 pt-3" id="searchResult">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>Search for a city:</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="enterCity"
+                                placeholder="Enter city to view weather">
+                                <button type="button" id="searchBtn" class="btn btn-primary">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
 
-                <!-- CURRENT WEATHER container -->
-                <div class="col-md-9 mt-2">
-                    <div class="row">
-                        <div id="current-container">
-                            <!-- For current weather -->
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <ul id="searchResults" class="list-group">
+                                <!-- Add previous search results here! -->
+                            </ul>
                         </div>
-
-                        <!-- 5DAY WEATHER container -->
-                            <h2 id="five-day" class="mt-1"></h2>
-                            <div id="forecast-container" class="row"></div>
                     </div>
                 </div>
-            
-        <!-- END MAIN CONTAINER-->
+
+                <div id="weatherContainer" class="col-9 pb-4 pt-4">
+                    <div class="row pb-3 mr-2 ml-2">
+                        <div id="cityDetail" class="col-12 border rounded px-3 py-3">
+                            <!-- CURRENT WEATHER results here -->
+                        </div>
+                    </div>
+
+                    <div class="row pb-2 pt-1">
+                        <div class="col-12 ml-2">
+                            <h3>5-Day Forecast:</h3>
+                        </div>
+                    </div>
+
+                    <div id="futureWeather" class="row pl-2">
+                        <!-- 5 DAY WEATHER results here-->
+                    </div>
+
+                </div>
             </div>
+        
+        <!-- END MAIN CONTAINER-->
         </div>
+            
+      
+        
+     
 
     </body>
     
