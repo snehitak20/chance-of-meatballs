@@ -25,4 +25,38 @@ var cities = [];
 
 // Click on city from search history--> can see the search history again
     // Use localStorage
+
+    var loadCities = function(){
+        var citiesLoad = localStorage.getItem("cities");
+        if(!citiesLoad) {
+            return false;
+        }
+
+        citiesLoad = JSON.parse(citiesLoad);
+        for (var i = 0; i < citiesLoad.length; i++) {
+            displaySearchCities(citiesLoad[i])
+            cities.push(citiesLoad[i])
+        }
+    }
+
+    var savedCities = function(){
+        localStorage.setItem("cities", JSON.stringify(cities));
+    }
+
+    var displaySearchedCities = function(city) {
+        var cityCardEl = document.createElement("div");
+        cityCardEl.setAttribute("class", "card");
+        var cityCardNameEl = document.createElement("div");
+        cityCardNameEl.setAttribute("class", "card-body searched-city");
+        cityCardNameEl.textContent = city;
+        
+        cityCardEl.appendChild(cityCardNameEl)
+    
+        cityCardEl.addEventListener("click", function () {
+            getCityData(city)
+        });
+    
+        searchHistoryEl.appendChild(cityCardEl)
+    
+    }
     
