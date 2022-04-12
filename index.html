@@ -8,8 +8,11 @@
     <!-- Linking Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Linking font-awesome for search icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
+    <script src="https://kit.fontawesome.com/b2c1ba937c.js" crossorigin="anonymous"></script>
+    <!-- Linking ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+    <!-- Linking Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!-- Link for external stylesheet -->
     <link rel="stylesheet" href="./assets/style.css">
 
@@ -18,79 +21,57 @@
 
     <body>
          <!--- Header/NavBar -->
-         <header class="container-fluid text-center text-white bg-dark p-2">
+         <header class="header">
             <h1>Weather Dashboard</h1>
         </header>
 
-        <!-- Main container that will hold all the other containers -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 bg-light">
-                    <h5 class="mt-1">Search for a city:</h5>
-                    <div class="input-group mb-3">
-                        <input id="enter-city" type="text" class="form-control" placeholder="Enter a city" aria-label="Enter a city">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" id="search-button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
-                    <form id="history"></form>
-                </div>
-            <!-- End input section -->
-            <div class="col-lg-9">
-                <div class="row mr-0">
-                    <div class="col-lg-11 card m-3 d-none" id="today-weather">
-                        <div class="card-body">
-                            <h3 id="city-name" class="city-name align-middle"></h3>
-                            <img id="current-pic" alt="">
-                            <p id="temperature"></p>
-                            <p id="humidity"></p>
-                            <p id="wind-speed"></p>
-                            <p id="UV-index"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row d-none" id="fiveday-header">
-                    <div class="col-12">
-                        <h3>5-Day Forecast</h3>
-                    </div>
-                </div>
+        <div class="container">
+            <div class="search">
                 <div class="row">
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded"></div>
+                    <h1>Search for a City:</h1>
+                </div>
+
+                <div class="row">
+                    <input type="text" class="searchInput" placeholder="Seattle">
+                    <button type="submit" class="searchBtn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="historyItems"></div>
+            </div>
+
+            <div class="col-two-container">
+                <div class="forecast">
+                    <div class="row">
+                        <h1 class="cityName">City Name</h1>
+                        <h1 class="currentDate"></h1>
+                        <img class="weatherIcon"></img>
+                    </div>
+
+                    <div class="row">
+                        <p class="temp">Temperature:</p>
+                    </div>
+
+                    <div class="row">
+                        <p class="humidity">Humidity:</p>
+                    </div>
+
+                    <div class="row">
+                        <p class="windSpeed">Wind Speed:</p>
+                    </div>
+
+                    <div class="row">
+                        <p class="uvIndex">UV Index:</p>
+                    </div>
+                </div>
+
+                <div class="five-day-container">
+                    <h1>5-Day Forecast:</h1>
+                    <div class="card-row">
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-            <!-- Search history section -->
-           
-                <!-- Add search history buttons-->
-          
-
-            <!-- End of search column area -->
-         
-
-            <!--- Current City Container -->
-           
-                     <!-- Display current weather data here -->
-                   
-            
-                <!--- 5-day forecast container-->
-                    
-        <!--- end fluid container and row  -->
-   
-            
-      
-        
-     
-
+        </div>      
 </body>
-    
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./assets/script.js"></script>
 </html>
