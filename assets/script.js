@@ -5,12 +5,8 @@ var searchEl = document.getElementById("search-button");
 var searchHistoryEl = document.getElementById("current-container");
 var forecastContainerEl = document.getElementById("forecast-container");
 
-var keyAPI = "d68f0c0e0b753d63f2e0524f28465816";
+var APIkey = "d9ea6c539f3a7c995e1a3a8010745a6af";
 var cities = [];
-
-
-
-
 
 
 // Dashboard with form inputs
@@ -154,14 +150,66 @@ var cities = [];
 
     }
 };
+
+var getCityData = function(city) {
+    event.preventDefault();
     
+    //current conditions in user-entered city//using it to get long and latitude for One call weather API url
+    var cityInfoUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + APIkey;
 
-
-
-    // FUTURE WEATHER: 5-day forecast--> date, icon of weather, temperature, humidity
+    //make a request to the url
+    fetch(cityInfoUrl).then(function(response) {
+        //if response is okay, no errors found
+        if (response.ok) {
+            response.json().then(function(data) {
+            console.log(data);
     
+    //variables set for data needed from this pull 
+    var cityName = data.name;
+    var latitude = data.coord.lat;
+    var longitude = data.coord.lon;
+    
+    //check if city exists in storage/array -- update it if not
+    var prevSearch = cities.includes(cityName)
+    if (!prevSearch) {
+        cities.push(cityName)
+        saveCities()
+        displaySearchedCities(cityName)
+    }
 
-// Click on city from search history--> can see the search history again
-    // Use localStorage
+    getWeatherData(cityName,latitude,longitude);
 
-     
+    });
+
+    //if city name is invalid return error message
+    } else { 
+        alert("That city wasn't found!")
+        cityFormEl.reset()
+     }
+   });
+};
+
+var getWeatherData = function(city,latitude,longitude) { 
+    ///5-day forecast API
+    var forecastUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + latitude + "&lon=" + longitude + "&units=imperial&exclude=minutely,hourly&appid=" + APIkey;
+        
+    fetch(forecastUrl).then(function(response) {
+        response.json().then(function(data) {
+            console.log(data);
+
+        displayCurrentData(city, data);
+        displayForecastData(data);
+
+        });
+    });
+};
+
+//load previously searched cities on page load
+loadCities()
+
+//form submit listener when user enters city
+cityFormEl.addEventListener("submit", function() {
+    cityInput = cityInputEl.value.trim();
+    getCityData(cityInput);
+})
+    
