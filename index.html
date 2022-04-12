@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     
-    <!-- Linking Bootstrap -->
+    <!-- Link for Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- Linking font-awesome for search icon -->
+    <!-- Link for font-awesome for search icon -->
     <script src="https://kit.fontawesome.com/b2c1ba937c.js" crossorigin="anonymous"></script>
-    <!-- Linking ajax -->
+    <!-- Link for ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-    <!-- Linking Google Fonts -->
+    <!-- Link for Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!-- Link for external stylesheet -->
     <link rel="stylesheet" href="./assets/style.css">
@@ -20,19 +20,21 @@
     </head>
 
     <body>
-         <!--- Header/NavBar -->
+         <!--- Header -->
          <header class="header">
             <h1>Weather Dashboard</h1>
         </header>
 
+        <!-- Search container -->
         <div class="container">
             <div class="search">
                 <div class="row">
                     <h1>Search for a City:</h1>
                 </div>
 
+                <!-- This part is for the form input-->
                 <div class="row">
-                    <input type="text" class="searchInput" placeholder="Seattle">
+                    <input type="text" class="searchInput" placeholder="Enter a city name">
                     <button type="submit" class="searchBtn">
                         <i class="fas fa-search"></i>
                     </button>
@@ -40,6 +42,7 @@
                 <div class="historyItems"></div>
             </div>
 
+            <!-- CURRENT weather container -->
             <div class="col-two-container">
                 <div class="forecast">
                     <div class="row">
@@ -48,6 +51,7 @@
                         <img class="weatherIcon"></img>
                     </div>
 
+                    <!-- For the info within the CURRENT weather box -->
                     <div class="row">
                         <p class="temp">Temperature:</p>
                     </div>
@@ -65,10 +69,10 @@
                     </div>
                 </div>
 
+                <!-- 5-DAY weather container-->
                 <div class="five-day-container">
                     <h1>5-Day Forecast:</h1>
-                    <div class="card-row">
-                    </div>
+                    <div class="card-row"></div>
                 </div>
             </div>
         </div>      
