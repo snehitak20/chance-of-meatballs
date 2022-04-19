@@ -1,5 +1,9 @@
 # chance-of-meatballs
 
+## Deplyed Webpage
+
+[Link to webpage](https://snehitak20.github.io/chance-of-meatballs/)
+
 ## Description
 
 The goal of this project is to create a weather dashboard that displays the current weather forecast for the city that has been searched. For current weather, the city name, the date, an icon of the weather, humidity levels, wind speed, and UV index are included. A 5-Day forecast is also included for that city with the dates, temperatures, humidity levels, and weather icons for that city over the next 5 days. When a city is searched, that search result is saved and users are able to once again click on that search history to pull up the weather dashboard for that city.
@@ -8,8 +12,6 @@ The main objective of this project is to build the weather dashboard from scratc
 
 <img src="./assets/js.png" alt="JavaScript code snippet">
 <img src="./assets/weather.png" alt="Weather dashboard snapshot">
-
-[Link to webpage](https://snehitak20.github.io/chance-of-meatballs/)
 
 ## Technologies Used: 
 - HTML5
@@ -76,3 +78,9 @@ For this project, it was important to learn the usage of the fetch and ajax prot
 ## License
 
 Licensed under the [MIT](https://choosealicense.com/licenses/mit/#) license. 
+
+## Contributors
+
+Feel free to reach out to me at the following: 
+* [LinkedIn](https://www.linkedin.com/in/snehita-kolli-0abb23b1/)
+* [GitHub](https://github.com/snehitak20)
