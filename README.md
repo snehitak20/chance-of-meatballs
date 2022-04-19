@@ -1,6 +1,6 @@
 # chance-of-meatballs
 
-## Deplyed Webpage
+## Deployed Webpage
 
 [Link to webpage](https://snehitak20.github.io/chance-of-meatballs/)
 
